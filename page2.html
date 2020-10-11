@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cards</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<style type="text/css">
+
+
+body{
+ font-family: arial;
+}
+
+    .main {
+        margin: 2%;
+        box-shadow: 2px 2px 20px black;
+    }
+    .header {
+        width:99%;
+        margin-top: 30px;
+        margin-left:7px;
+        height:50px;
+        background-color: white;
+        box-shadow: 2px 2px 20px black;
+    }
+    .header page_head{
+        align-content:center;
+    }
+.card{
+	 width: 20%;
+	 display: inline-block;
+	 box-shadow: 2px 2px 20px black;
+	 border-radius: 5px; 
+	 margin: 2%;
+	}
+
+.image img{
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  
+
+ 
+ }
+
+.title{
+ 
+  text-align: center;
+  padding: 10px;
+  
+ }
+
+h1{
+  font-size: 20px;
+ }
+
+.des{
+  padding: 3px;
+  text-align: center;
+ 
+  padding-top: 10px;
+		border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+button{
+  margin-top: 40px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding:10px;
+}
+button:hover{
+  background-color: black;
+  color: white;
+  transition: .5s;
+  cursor: pointer;
+}
+  .open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+.logo{
+    float:left;
+    padding-top:2px;
+    padding-left:2px;
+    
+}
+.bread
+{
+    padding-top:4px;
+    float:left;
+    padding-left:10px;
+    padding-right:450px;
+}
+    .page_head {
+        float: left;
+        font-color: #f06C00;
+        padding-left: 20px;
+        padding-right: 500px;
+    }
+    ul.breadcrumb {
+        padding: 10px 16px;
+        list-style: none;
+       background-color:white;
+    }
+
+        ul.breadcrumb li {
+            display: inline;
+            font-size: 13px;
+        }
+
+            ul.breadcrumb li + li:before {
+                padding: 0px;
+                color: black;
+                content: ">\00a0";
+            }
+
+            ul.breadcrumb li a {
+                color: #0275d8;
+                text-decoration: none;
+            }
+
+                ul.breadcrumb li a:hover {
+                    color: #01447e;
+                    text-decoration: underline;
+                }
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+
+    .container {
+        width: 500px;
+        margin: auto;
+    }
+
+    .chat {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        background: #f1f0e8;
+    }
+
+    .chat-header {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .profile {
+        width: 100%;
+        background: #036055;
+        display: flex;
+        align-items: center;
+        height: 60px;
+        padding: 0px 10px;
+        position: relative;
+    }
+
+        .profile .pp {
+            width: 50px;
+            display: inline-block;
+            border-radius: 50%;
+            margin-left: 32px;
+        }
+
+        .profile .arrow {
+            display: inline-block;
+            width: 30px;
+            position: absolute;
+            top: 19px;
+            cursor: pointer;
+        }
+
+        .profile h2 {
+            display: inline-block;
+            line-height: 60px;
+            vertical-align: bottom;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .profile span {
+            color: #ccc;
+            position: absolute;
+            top: 42px;
+            left: 100px;
+            font-size: 14px;
+        }
+
+    .right .icon {
+        display: inline-block;
+        width: 25px;
+        margin-left: 10px;
+    }
+
+    .profile .left {
+        flex: 1;
+    }
+
+    .chat-box {
+        background: url('../img/bg.jpeg');
+        background-attachment: fixed;
+        padding-left: 20px;
+        overflow-y: scroll;
+        flex: 1;
+    }
+
+        .chat-box .img_chat {
+            width: 280px;
+        }
+
+    .chat-r {
+        display: flex;
+    }
+
+        .chat-r .sp {
+            flex: 1;
+        }
+
+    .chat-l {
+        display: flex;
+    }
+
+        .chat-l .sp {
+            flex: 1;
+        }
+
+    .chat-box .mess {
+        max-width: 300px;
+        background: #F7FCF6;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 20px 0px;
+        cursor: pointer;
+    }
+
+        .chat-box .mess p {
+            word-break: break-all;
+            font-size: 18px;
+        }
+
+    .chat-box .mess-r {
+        background: #E2FFC7;
+    }
+
+    .chat-box .emoji {
+        width: 20px;
+    }
+
+    .chat-box .check {
+        float: right;
+    }
+
+        .chat-box .check img {
+            width: 20px;
+        }
+
+        .chat-box .check span {
+            color: #888;
+            font-size: 12px;
+            font-weight: 700px;
+        }
+
+    *::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    *::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        background: #aaa;
+    }
+
+        *::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+    .chat-footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 60px;
+        position: relative;
+        cursor: pointer;
+    }
+
+        .chat-footer textarea {
+            display: block;
+            flex: 1;
+            width: 100%;
+            height: 50px;
+            border-radius: 60px;
+            margin: 5px;
+            padding: 10px;
+            outline: none;
+            font-size: 19px;
+            padding-left: 40px;
+            padding-right: 90px;
+            border: 2px solid #ccc;
+            color: #555;
+            resize: none;
+        }
+
+        .chat-footer .mic {
+            display: block;
+            width: 55px;
+            height: 55px;
+            margin-right: 20px;
+        }
+
+        .chat-footer .emo {
+            display: block;
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            left: 10px;
+            top: 12px;
+        }
+
+        .chat-footer .icons {
+            position: absolute;
+            right: 100px;
+            top: 10px;
+        }
+
+            .chat-footer .icons img {
+                display: inline-block;
+                width: 35px;
+                height: 35px;
+                margin-left: 5px;
+            }
+    
+</style>
+<body>
+     <div class="header">
+         <img class="logo" src="data:image/jpeg;base64,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" width="50px" height="38px" />
+         <div class="bread">
+          <ul class="breadcrumb">
+              <li><a href="page1.html">Home</a></li>
+              <li><a href="page2.html">Product Catalogue</a></li>
+
+          </ul>
+             </div>
+
+      <div class="page_head">
+          <h2 style="color: #f06C00;">catalyst 2.0</h2style="color:>
+      </div>
+         <img class="logout" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRYMgb6Ac56Omdx5Gy962KqK_Qoxv_B8wDysw&usqp=CAU"  width="50px" height="38px" />
+         </div>
+    
+     <div class="main">
+
+         <!--cards -->
+
+         <div class="card">
+             <a href="page3.html">
+                 <div class="image">
+                     <img src="bags.jpg" width="200px" height="200px">
+                 </div>
+             </a>
+             <div class="title">
+                 <h1>
+                     Bags
+                 </h1>
+             </div>
+
+         </div>
+         <div class="card">
+
+             <div class="image">
+                 <img src="chairs.jpg" width="200px" height="200px">
+             </div>
+             <div class="title">
+                 <h1>Chairs</h1>
+             </div>
+         </div>
+         <div class="card">
+
+             <div class="image">
+                 <img src="headphones.jpg" width="200px" height="200px">
+             </div>
+             <div class="title">
+                 <h1>
+                     Headphones
+                 </h1>
+             </div>
+         </div>
+         <div class="card">
+
+             <div class="image">
+                 <img src="laptop.jpg" width="200px" height="200px">
+             </div>
+             <div class="title">
+                 <h1>
+                     Laptops
+                 </h1>
+             </div>
+         </div>
+         <div class="card">
+
+             <div class="image">
+                 <img src="pants1.jpg" width="200px" height="200px">
+             </div>
+             <div class="title">
+                 <h1>Pants</h1>
+             </div>
+         </div>
+         <div class="card">
+
+             <div class="image">
+                 <img src="shoes.jpg" width="200px" height="200px">
+             </div>
+             <div class="title">
+                 <h1>
+                     Shoes
+                 </h1>
+             </div>
+         </div>
+         <div class="card">
+
+             <div class="image">
+                 <img src="soap.png" width="200px" height="200px">
+             </div>
+             <div class="title">
+                 <h1>
+                     Soaps
+                 </h1>
+             </div>
+         </div>
+
+         <div class="card">
+
+             <div class="image">
+                 <img src="speaker.png" width="200px" height="200px">
+             </div>
+             <div class="title">
+                 <h1>
+                     Speakers
+                 </h1>
+             </div>
+         </div>
+         <!--cards -->
+
+         <div class="card">
+
+             <div class="image">
+                 <img src="tables.png" width="200px" height="200px">
+             </div>
+             <div class="title">
+                 <h1>Tables</h1>
+             </div>
+         </div>
+         <div class="card">
+
+             <div class="image">
+                 <img src="shir.jpg" width="200px" height="200px">
+             </div>
+             <div class="title">
+                 <h1>
+                     T-shirts
+                 </h1>
+             </div>
+         </div>
+
+         <div class="card">
+
+             <div class="image">
+                 <img src="watches.jpg" width="200px" height="200px">
+             </div>
+             <div class="title">
+                 <h1>
+                     Watches
+                 </h1>
+             </div>
+         </div>
+         <!--cards -->
+         <!--cards -->
+         <!--cards -->
+         <!--cards -->
+         <!--cards -->
+         <!--cards -->
+         <!--cards -->
+
+
+
+
+
+     </div>
+
+    <button class="open-button" onclick="openForm()">Chat</button>
+
+    <div class="chat-popup" id="myForm">
+
+        <div class="container" id="myForm">
+            <div class="chat">
+                <div class="chat-header">
+                    <div class="profile">
+                        <div class="left">
+
+                            <img src="pp.png" class="pp">
+                            <h2>Notifications</h2>
+                            <span>online</span>
+                        </div>
+                        <div class="right">
+                            <img Style="width:30px" src="closeRed.jpg" onclick="closeForm()"></img>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-box">
+                    <div class="chat-r">
+                        <div class="sp"></div>
+                        <div class="mess mess-r">
+                            <p>
+                                Retailer Name:Bag zone<br>
+                                Retailer ID:036055<br>
+                                Product: Wildcraft bags<br>
+                                Quantity:10 units<br>
+                            </p>
+                            <div class="check">
+                                <span>12:00 PM</span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-l">
+                        <div class="mess">
+
+                            <p>
+                                Retailer Name:Delhi Electronics<br>
+                                Retailer ID:096584<br>
+                                Product:Senheiser Headphones<br>
+                                Quantity:7 units<br>
+                            </p>
+
+                            <div class="check">
+                                <span>12:40 PM</span>
+                            </div>
+                        </div>
+                        <div class="sp"></div>
+                    </div>
+
+                    <div class="chat-r">
+                        <div class="sp"></div>
+                        <div class="mess mess-r">
+                            <p>
+                                Retailer Name:SoGo Laptops<br>
+                                Retailer ID:196584<br>
+                                Product:Asus Laptop<br>
+                                Quantity:3 units<br>
+
+                            </p>
+                            <div class="check">
+                                <span>1:13 PM</span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-l">
+                        <div class="mess">
+                            <p>
+                                Retailer Name:Fashion Bazar<br>
+                                Retailer ID:963654<br>
+                                Product: Pants<br>
+                                Quantity:100 units<br>
+                            </p>
+                            <div class="check">
+                                <span>4:00 PM</span>
+                            </div>
+                        </div>
+                        <div class="sp"></div>
+                    </div>
+
+
+
+                    <div class="chat-footer">
+                        <img src="emo.png" class="emo">
+                        <textarea placeholder="Make Notes"></textarea>
+                        <div class="icons">
+                            <img src="attach file.png">
+                            <img src="camera.png">
+                        </div>
+                        <img src="mic.png" class="mic">
+                    </div>
+                </div>
+            </div>
+
+
+            <script>
+                function openForm() {
+                    document.getElementById("myForm").style.display = "block";
+                }
+
+                function closeForm() {
+
+                    document.getElementById("myForm").style.display = "none";
+                    // document.getElementById("chat_window").value = "";
+                }
+                function transaction() {
+                    var text = document.getElementById("chat_window").value;
+                    alert(text);
+                    //document.getElementById("chat_window").value="";
+
+                }
+            </script>
+
+</body>
+</html
+</html
